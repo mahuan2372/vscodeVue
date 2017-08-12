@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-  <div>adad </div>
+   <router-link to="/index">Go to index</router-link>
+    <router-link to="/table">Go to table</router-link>
       <router-view></router-view>
   </div>
 </template>
-
 <script>
 export default {
   data () {
@@ -24,9 +24,3 @@ export default {
   }
 }
 </script>
-
-<style>
-body {
-  font-family: Helvetica, sans-serif;
-}
-</style>

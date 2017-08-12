@@ -3,6 +3,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import App from './App.vue'
 import index from './index.vue'
+import table from './table.vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
@@ -16,7 +17,8 @@ Vue.use(ElementUI)
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
 const routes = [
-    { path: '/index', component: index }
+    { path: '/index', component: index },
+    { path: '/table', component: table }
 ]
 
 // 3. 创建 router 实例，然后传 `routes` 配置
