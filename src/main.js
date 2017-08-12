@@ -5,11 +5,14 @@ import App from './App.vue'
 import index from './index.vue'
 import table from './table.vue'
 import VueRouter from 'vue-router'
+import axios from 'axios'
 
 Vue.use(VueRouter)
 
 Vue.use(ElementUI)
 
+
+Vue.prototype.$ajax = axios;
 
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是

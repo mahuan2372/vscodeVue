@@ -1,4 +1,5 @@
 <template>
+<div>
   <el-table :data="tableData4" border style="width: 100%" max-height="250">
     <el-table-column fixed prop="date" label="日期" width="150">
     </el-table-column>
@@ -19,7 +20,7 @@
         </el-button>
       </template>
     </el-table-column>
-  </el-table>
+  </el-table></div>
 </template>
 <script>
    export default {

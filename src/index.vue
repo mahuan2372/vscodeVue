@@ -1,4 +1,5 @@
 <template>
+<div>
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
         <el-form-item label="活动名称" prop="name">
             <el-input v-model="ruleForm.name"></el-input>
@@ -47,6 +48,7 @@
             <el-button @click="resetForm('ruleForm')">重置</el-button>
         </el-form-item>
     </el-form>
+</div>
 </template>
 <script>
 export default {
@@ -113,19 +115,27 @@ export default {
     },
     methods: {
         submitForm(formName) {
-            this.$refs[formName].validate((valid) => {
-                if (valid) {
-                    alert('submit!');
-                } else {
-                    console.log('error submit!!');
-                    return false;
-                }
-            });
+           // console.log(this.ruleForm);
+            this.$ajax({
+                method: 'get',
+                datatype:'json',
+                url: 'http://127.0.0.1:8010/data.json'
+            }).then((data)=> {
+                console.log(data.data);
+                this.ruleForm=data.data;
+            })
+            // this.$refs[formName].validate((valid) => {
+            //     if (valid) {
+            //         alert('submit!');
+            //     } else {
+            //         console.log('error submit!!');
+            //         return false;
+            //     }
+            // });
         },
         resetForm(formName) {
             this.$refs[formName].resetFields();
         }
     }
 }
-
 </script>
